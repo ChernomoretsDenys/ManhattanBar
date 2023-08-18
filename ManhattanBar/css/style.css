@@ -117,9 +117,24 @@ body.locked {
   text-transform: uppercase;
 }
 
+.article,
+.article--top,
+.main--techRaider_top,
+.footer_top,
+.posterMain_top {
+  row-gap: calc((1vh + 1vw) * 1.4);
+}
+
 .main--cuisine,
 .main--cuisine_top,
-.article, .article--top {
+.article,
+.article--top,
+.main--techRaider,
+.main--techRaider_top,
+.block--musician_card,
+.block--musician,
+.footer_top,
+.posterMain_top {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1075,7 +1090,7 @@ button.swiper-pagination-bullet {
 
 .main--cuisine_top {
   margin: calc((1vh + 1vw) * 1.4) 0;
-  row-gap: calc(1vh + 1vw);
+  row-gap: calc((1vh + 1vw) * 1.4);
 }
 
 .main--cuisine_menu {
@@ -1157,14 +1172,6 @@ button.swiper-pagination-bullet {
   row-gap: calc((1vh + 1vw) * 2);
 }
 
-.article {
-  row-gap: calc((1vh + 1vw) * 1.4);
-}
-
-.article--top {
-  row-gap: calc((1vh + 1vw) * 1.4);
-}
-
 .article--main p {
   text-align: center;
   line-height: 150%;
@@ -1182,15 +1189,30 @@ button.swiper-pagination-bullet {
 }
 
 .main--techRaider {
+  margin-top: calc((1vh + 1vw) * 2);
   width: 100%;
+  row-gap: calc((1vh + 1vw) * 1.4);
+}
+
+.main--techRaider_block {
+  display: flex;
+  flex-direction: column;
+  row-gap: calc((1vh + 1vw) * 1.4);
 }
 
 .block--dropDowns {
   width: inherit;
+  display: flex;
+  flex-direction: column;
+  row-gap: calc((1vh + 1vw) * 1.4);
 }
 
 .block--dropDown_title .textBig_white {
   display: unset;
+}
+
+.block--dropDown {
+  cursor: pointer;
 }
 
 .block--dropDown {
@@ -1201,35 +1223,187 @@ button.swiper-pagination-bullet {
 }
 
 .block--dropDown_title {
-  display: block;
+  display: flex;
+  align-items: center;
+}
+
+.block--dropDown_title > * {
+  flex: 1 1 auto;
 }
 
 .block--dropDown_title:after {
-  float: right;
+  margin-left: auto;
   content: url(../img/logos/ep_arrow-up-bold.svg);
+  transform: scale(1);
   transition: transform 0.4s ease;
 }
 
 .dropDown--list {
   width: 100%;
-  height: 0px;
+  max-height: 0px;
   overflow: hidden;
   text-align: left;
-  transition: height 0.4s ease;
+  transition: max-height 0.4s ease;
 }
 
 .dropDown--item {
-  list-style: circle;
+  list-style: disc;
+  font-size: calc((1vh + 1vw) * 1.3);
+  list-style-position: inside;
+  line-height: 150%;
 }
 
 .block--dropDown.active {
   background-color: #d5621d;
 }
 .block--dropDown.active .dropDown--list {
-  height: 200px;
+  max-height: calc((1vh + 1vw) * 12);
+}
+.block--dropDown.active .block--dropDown_title {
+  margin-bottom: calc(1vh + 1vw);
 }
 .block--dropDown.active .block--dropDown_title:after {
   transform: rotate(180deg);
+}
+
+.block--musician {
+  row-gap: calc(1vh + 1vw);
+  align-self: start;
+}
+
+.block--musician_cards {
+  display: flex;
+  justify-content: space-between;
+}
+
+.block--musician_card {
+  flex: 0 1 47%;
+  width: 47%;
+  row-gap: calc((1vh + 1vw) * 1.4);
+}
+
+.card--image {
+  width: 100%;
+}
+
+.card--title {
+  font-size: calc((1vh + 1vw) * 0.9 * 1.2);
+  width: min-content;
+  text-align: center;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+
+.card--icons {
+  display: flex;
+  column-gap: calc((1vh + 1vw) * 1.4);
+}
+
+.card--icon {
+  border: calc((1vh + 1vw) * 0.2) solid #d5621d;
+  padding: calc((1vh + 1vw) * 0.3);
+  border-radius: calc((1vh + 1vw) * 0.2);
+}
+
+.card--icon a {
+  display: flex;
+}
+
+.posterMain {
+  display: flex;
+  flex-direction: column;
+}
+
+.posterMain {
+  margin-top: calc((1vh + 1vw) * 3);
+  row-gap: calc((1vh + 1vw) * 1.4);
+}
+
+.posterMain_posters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc((1vh + 1vw) * 1.4);
+}
+
+.posterMain_poster {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 47%;
+}
+
+.posterMain_poster img {
+  width: 100%;
+}
+
+.footer,
+.footer_main,
+.footer_contacts,
+.footer_section {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer {
+  margin-top: calc((1vh + 1vw) * 2);
+  row-gap: calc((1vh + 1vw) * 1.4);
+}
+
+.footer_main {
+  row-gap: calc((1vh + 1vw) * 1.4);
+  border-bottom: calc((1vh + 1vw) * 0.16) solid #fff;
+  padding-bottom: calc((1vh + 1vw) * 2);
+}
+
+.footer_contacts {
+  padding: calc((1vh + 1vw) * 1.6);
+  background-color: #33170b;
+  border-radius: calc((1vh + 1vw) * 0.2);
+  border: calc((1vh + 1vw) * 0.2) solid #d5621d;
+}
+
+.footer_section {
+  row-gap: calc(1vh + 1vw);
+}
+
+.footer-secion_line {
+  border-bottom: calc((1vh + 1vw) * 0.16) solid #fff;
+  padding-bottom: calc(1vh + 1vw);
+  margin-bottom: calc(1vh + 1vw);
+}
+
+.footer_head {
+  font-size: calc((1vh + 1vw) * 1.3);
+  font-weight: 700;
+  line-height: 150%; /* 27px */
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+}
+
+.footer_desc {
+  font-size: calc((1vh + 1vw) * 1.2);
+  line-height: 150%;
+}
+
+.footer_iframe {
+  width: 99%;
+  height: 99%;
+  border: calc((1vh + 1vw) * 0.2) solid #d5621d;
+  border-radius: calc((1vh + 1vw) * 0.2);
+}
+
+.footer_footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer_copyright,
+.footer_dev {
+  opacity: 0.5;
+  font-size: calc(1vh + 1vw);
+  line-height: 150%;
 }
 
 @media (min-width: 650px) {
@@ -1258,14 +1432,69 @@ button.swiper-pagination-bullet {
     display: none;
   }
   .main--cuisine_button {
-    font-size: calc((1vh + 1vw) * 0.9 * 0.8);
+    font-size: calc((1vh + 1vw) * 0.9 * 0.8 * 1.4);
   }
   .main--info_aritcles {
     flex-direction: row;
     column-gap: calc((1vh + 1vw) * 2);
   }
+  .main--techRaider_block {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    column-gap: calc((1vh + 1vw) * 1.4);
+  }
+  .block--dropDowns {
+    flex: 1 1 50%;
+  }
+  .block--musician {
+    flex: 1 1 44%;
+  }
+  .block--dropDown {
+    padding: calc((1vh + 1vw) * 0.7) calc((1vh + 1vw) * 1.6);
+  }
+  .block--dropDown_title .textBig_white {
+    font-size: calc((1vh + 1vw) * 1.3);
+  }
+  .card--icon {
+    border: calc((1vh + 1vw) * 0.1) solid #d5621d;
+  }
+  .footer_main {
+    flex-direction: row;
+    row-gap: unset;
+    column-gap: calc((1vh + 1vw) * 1.4);
+  }
+  .footer_contacts {
+    flex: 1 1 33%;
+  }
+  .footer_map {
+    flex: 1 1 63%;
+  }
+  .posterMain_poster {
+    flex: 1 1 20%;
+  }
 }
 @media (min-width: 1000px) {
+  .frame_white {
+    font-size: calc((1vh + 1vw) * 0.9 * 0.7);
+  }
+  .textBig_white {
+    font-size: calc((1vh + 1vw) * 0.9);
+  }
+  .frame-button {
+    line-height: calc((1vh + 1vw) * 1.4);
+    padding: 0 calc((1vh + 1vw) * 0.6);
+  }
+  .mediumSize {
+    font-size: calc((1vh + 1vw) * 1.3 * 0.6);
+  }
+  .header--image {
+    display: inline-block;
+    width: calc((1vh + 1vw) * 7);
+  }
+  .nav--item {
+    font-size: calc((1vh + 1vw) * 0.9 * 0.7);
+  }
   .main--concert_image img {
     width: calc((1vh + 1vw) * 6);
   }
@@ -1280,23 +1509,8 @@ button.swiper-pagination-bullet {
   .main--concert_backdrop {
     display: flex;
   }
-  .frame-button {
-    line-height: calc((1vh + 1vw) * 1.4);
-    padding: 0 calc((1vh + 1vw) * 0.6);
-  }
-  .mediumSize {
-    font-size: calc((1vh + 1vw) * 1.3 * 0.6);
-  }
-  .nav--item {
-    font-size: calc((1vh + 1vw) * 0.9 * 0.7);
-  }
-  .header--image {
-    display: inline-block;
-    width: calc((1vh + 1vw) * 7);
-  }
   .main--cuisine_button {
-    padding: calc((1vh + 1vw) * 0.7) calc((1vh + 1vw) * 1.3);
-    border-radius: calc((1vh + 1vw) * 0.8);
+    padding: calc((1vh + 1vw) * 0.5) calc(1vh + 1vw);
   }
   .menu--block_title {
     font-size: calc((1vh + 1vw) * 0.9);
@@ -1321,6 +1535,28 @@ button.swiper-pagination-bullet {
   .article--backdrop {
     display: flex;
   }
+  .block--dropDown_title .textBig_white {
+    font-size: calc((1vh + 1vw) * 0.9);
+  }
+  .card--icon {
+    padding: calc((1vh + 1vw) * 0.5);
+  }
+  .footer_desc {
+    font-size: calc((1vh + 1vw) * 0.8);
+  }
+  .footer_copyright,
+  .footer_dev {
+    opacity: 0.5;
+    font-size: calc((1vh + 1vw) * 0.6);
+    line-height: 150%;
+  }
+  .footer_head {
+    font-size: calc((1vh + 1vw) * 0.9);
+  }
+  .footer_contacts,
+  .footer_iframe {
+    border: calc((1vh + 1vw) * 0.1) solid #d5621d;
+  }
 }
 @media (min-width: 1200px) {
   .swiper-button-prev,
@@ -1335,5 +1571,20 @@ button.swiper-pagination-bullet {
   .menu--block_img {
     width: calc((1vh + 1vw) * 5);
     height: calc((1vh + 1vw) * 5);
+  }
+  .block--dropDown.active .block--dropDown_title:after {
+    transform: scale(1.4) rotate(180deg);
+  }
+  .block--dropDown_title:after {
+    transform: scale(1.4);
+  }
+  .card--icon_image {
+    transform: scale(2);
+  }
+  .dropDown--item {
+    font-size: calc((1vh + 1vw) * 0.9);
+  }
+  .block--dropDown_title .textBig_white {
+    font-size: calc((1vh + 1vw) * 0.9 * 0.9);
   }
 }
